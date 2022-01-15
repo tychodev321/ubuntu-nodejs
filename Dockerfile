@@ -1,7 +1,7 @@
 FROM registry.access.redhat.com/ubi8/ubi-minimal:8.4
 # FROM redhat/ubi8/ubi-minimal:8.4
 
-LABEL maintainer="TychoDev <cloud.ops@tychodev.com>"
+LABEL maintainer=""
 
 ENV NODEJS_VERSION=14 \
     PATH=$HOME/.local/bin/:$PATH \
