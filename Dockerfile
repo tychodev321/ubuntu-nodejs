@@ -3,8 +3,8 @@ FROM registry.access.redhat.com/ubi9/ubi-minimal:9.0.0
 
 LABEL maintainer=""
 
-ENV NODEJS_VERSION=16 \
-    NPM_VERSION=8 \
+ENV NODEJS_VERSION=16.14.0 \
+    NPM_VERSION=8.3.1 \
     PATH=$HOME/.local/bin/:$PATH \
     npm_config_loglevel=warn \
     npm_config_unsafe_perm=true
