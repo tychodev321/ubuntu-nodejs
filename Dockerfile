@@ -3,16 +3,14 @@ FROM registry.access.redhat.com/ubi9/ubi-minimal:9.0.0
 
 LABEL maintainer=""
 
-ENV NODEJS_VERSION=16.14.0 \
-    NPM_VERSION=8.3.1 \
+ENV NODEJS_VERSION=16 \
+    NPM_VERSION=8 \
     PATH=$HOME/.local/bin/:$PATH \
     npm_config_loglevel=warn \
     npm_config_unsafe_perm=true
 
 # MicroDNF is recommended over YUM for Building Container Images
 # https://www.redhat.com/en/blog/introducing-red-hat-enterprise-linux-atomic-base-image
-
-RUN microdnf module list nodejs
 
 RUN microdnf update -y \
     && microdnf install -y nodejs:${NODEJS_VERSION} \
