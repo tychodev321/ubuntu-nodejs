@@ -5,6 +5,7 @@ LABEL maintainer=""
 
 ENV NODEJS_VERSION=16.14.0 \
     NPM_VERSION=8.3.1 \
+    YARN_VERSION=1.22.19 \
     PATH=$HOME/.local/bin/:$PATH \
     npm_config_loglevel=warn \
     npm_config_unsafe_perm=true
@@ -18,7 +19,7 @@ RUN microdnf update -y \
     && microdnf clean all \
     && rm -rf /var/cache/* /var/log/dnf* /var/log/yum.*
 
-RUN npm install --global yarn \
+RUN npm install --global yarn@${YARN_VERSION} \
     && npm config set prefix /usr/local
     
 RUN node --version && npm --version && yarn --version
