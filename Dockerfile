@@ -13,8 +13,8 @@ ENV NODEJS_VERSION=16 \
 # https://www.redhat.com/en/blog/introducing-red-hat-enterprise-linux-atomic-base-image
 
 RUN microdnf update -y \
-    && microdnf install -y nodejs:${NODEJS_VERSION} \
-    && microdnf install -y npm:${NPM_VERSION} \
+    && microdnf install -y nodejs-${NODEJS_VERSION} \
+    && microdnf install -y npm-${NPM_VERSION} \
     && microdnf clean all \
     && rm -rf /var/cache/* /var/log/dnf* /var/log/yum.*
 
