@@ -12,7 +12,6 @@ ENV NODEJS_VERSION=16 \
 # https://www.redhat.com/en/blog/introducing-red-hat-enterprise-linux-atomic-base-image
 
 RUN microdnf update -y \
-    && microdnf module enable nodejs:${NODEJS_VERSION} \
     && microdnf install -y nodejs \
     && microdnf install -y npm \
     && microdnf clean all \
