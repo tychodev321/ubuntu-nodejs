@@ -3,7 +3,7 @@ FROM registry.access.redhat.com/ubi9/ubi-minimal:9.0.0
 
 LABEL maintainer=""
 
-ENV NODEJS_VERSION=14 \
+ENV NODEJS_VERSION=16 \
     PATH=$HOME/.local/bin/:$PATH \
     npm_config_loglevel=warn \
     npm_config_unsafe_perm=true
@@ -12,7 +12,7 @@ ENV NODEJS_VERSION=14 \
 # https://www.redhat.com/en/blog/introducing-red-hat-enterprise-linux-atomic-base-image
 
 RUN microdnf update -y \
-    && microdnf module enable nodejs:14 \
+    && microdnf module enable nodejs:${NODEJS_VERSION} \
     && microdnf install -y nodejs \
     && microdnf install -y npm \
     && microdnf clean all \
