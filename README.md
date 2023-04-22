@@ -1,1 +1,1 @@
-# ubi-nodejs
+# ubuntu-nodejs
