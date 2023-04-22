@@ -16,12 +16,13 @@ RUN apt update -y && apt upgrade -y \
     && apt install -y tar \
     && apt install -y wget \
     && apt install -y curl \
+    && apt install -y sudo \
     && apt clean -y \
     && rm -rf /var/lib/apt/lists/*
 
 # Install Node and NPM
 RUN apt update -y && apt upgrade -y \
-    && curl -fsSL https://deb.nodesource.com/setup_18.x | sudo -E bash - \
+    curl -fsSL https://deb.nodesource.com/setup_18.x | sudo -E bash - \
     && apt install -y nodejs \
     && apt install -y npm \
     && apt clean -y \
