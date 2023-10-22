@@ -3,7 +3,7 @@ FROM ubuntu:22.04
 
 LABEL maintainer=""
 
-ENV NODEJS_VERSION=18.18.2 \
+ENV NODEJS_VERSION=18.0.0 \
     NPM_VERSION=10.1.0 \
     YARN_VERSION=1.22.19 \
     PATH=$HOME/.local/bin/:$PATH \
