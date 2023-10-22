@@ -23,7 +23,7 @@ RUN apt update -y && apt upgrade -y \
 
 # Install Node and NPM
 RUN apt update -y && apt upgrade -y \
-    curl -fsSL https://deb.nodesource.com/setup_18.x | sudo -E bash - \
+    && curl -s https://deb.nodesource.com/setup_18.x | sudo bash \
     && apt install -y nodejs \
     && apt install -y npm \
     && apt clean -y \
